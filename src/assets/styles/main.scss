@@ -1,0 +1,11 @@
+// 사이트 전반에 걸쳐 재사용되는 스타일 정의
+@import "./base/reset";
+@import "./base/typography";
+
+// 다른 정의된 스타일을 보조하는 역할
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+// 테마
+@import "./themes/light";
+@import "./themes/dark";

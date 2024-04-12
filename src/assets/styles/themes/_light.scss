@@ -1,0 +1,9 @@
+$theme: (
+  "background": #fff,
+);
+
+html[data-theme="light"] {
+  @each $name, $color in $theme {
+    --#{$name}: #{$color};
+  }
+}
