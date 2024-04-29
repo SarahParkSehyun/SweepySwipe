@@ -6,7 +6,7 @@ import ModalContainer from "./components/ModalContainer";
 
 function App() {
   const { mode } = useThemeStore(["mode"]);
-  
+
   useEffect(() => {
     console.log("mode:", mode);
     document.documentElement.setAttribute("data-theme", mode);

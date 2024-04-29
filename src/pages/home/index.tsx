@@ -1,5 +1,5 @@
 import "./style.scss";
 
 export default function Home() {
-  return <div></div>;
+  return <div>메인</div>;
 }
