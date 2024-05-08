@@ -3,7 +3,6 @@ import { useThemeStore } from "./stores/themeStore";
 import { RouterProvider } from "react-router-dom";
 import router from "./routers";
 import ModalContainer from "./components/ModalContainer";
-
 function App() {
   const { mode } = useThemeStore(["mode"]);
 

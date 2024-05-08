@@ -1,4 +1,6 @@
 import { Outlet, useLocation, useMatches, useParams } from "react-router-dom";
+import Header from "./header";
+import "./style.scss";
 
 export default function DefaultLayout() {
   const matches = useMatches();
@@ -7,7 +9,10 @@ export default function DefaultLayout() {
 
   return (
     <div>
-      <Outlet />
+      <Header />
+      <div className="root-container">
+        <Outlet />
+      </div>
     </div>
   );
 }
