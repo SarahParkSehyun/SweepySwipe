@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run assets && vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "build:dev": "tsc && vite build --mode dev",
     "build:release": "tsc && vite build --mode release",
