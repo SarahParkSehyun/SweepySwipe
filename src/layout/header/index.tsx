@@ -23,7 +23,9 @@ const Header = () => {
           <div className="nav-list">
             <Link to={PathContants.Login}>로그인</Link>
             <Link to={PathContants.Home}>회원가입</Link>
-            <StyleButton>대형 폐기물 수거신청</StyleButton>
+            <StyleButton className="style-button">
+              대형 폐기물 수거신청
+            </StyleButton>
           </div>
         </nav>
       </div>

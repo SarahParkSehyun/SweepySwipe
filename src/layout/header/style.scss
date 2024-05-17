@@ -32,7 +32,27 @@
                 gap: 30px;
 
                 .nav-list {
+                    display: flex;
+                    align-items: center;
                     gap: 20px;
+
+                    .style-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: auto;
+                        height: 40px;
+                        padding: 4px 18px;
+                        border-radius: 50px;
+                        @include b-16;
+                        line-height: 4rem;
+                        cursor: pointer;
+                        outline: none;
+                        text-align: center;
+                        border: 1.5px solid rgb(235, 240, 255);
+                        background-color: rgb(235, 240, 255);
+                        color: rgb(31, 65, 255);
+                    }
                 }
             }
 
