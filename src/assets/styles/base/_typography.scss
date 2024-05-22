@@ -60,6 +60,10 @@
   @include typography(2rem, 600);
 }
 
+@mixin e-m-24 {
+  @include typography(2.4rem, 600);
+}
+
 @mixin b-10 {
   @include typography(1rem, 700);
   line-height: 1.193rem;
