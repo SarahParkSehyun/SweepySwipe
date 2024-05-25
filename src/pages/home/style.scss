@@ -1,1 +1,17 @@
-.main-container {}
+.main-container {
+    >section {
+        .section-title {
+            margin: 0px 0px 15px;
+            color: rgb(31, 65, 255);
+            @include e-m-20;
+            line-height: 3.2rem;
+        }
+
+        .section-des {
+            line-height: 6.4rem;
+            margin: 0px;
+            color: rgb(0, 0, 0);
+            @include b-40;
+        }
+    }
+}

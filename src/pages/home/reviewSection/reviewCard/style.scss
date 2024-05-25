@@ -1,0 +1,61 @@
+.review-card-wrap {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 330px;
+    height: 330px;
+    margin: 50px 16px 40px;
+    padding: 30px 35px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 32px 0px;
+    background-color: white;
+
+    .review-content-wrap {
+        .caption {
+            margin: 0px 0px 15px;
+            font-weight: 700;
+            color: rgb(0, 0, 0);
+            display: block;
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+        }
+
+        .sub-title {
+            margin: 0px 0px 10px;
+            color: rgb(0, 0, 0);
+            line-height: 3.2rem;
+            @include e-m-20;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-height: 64px;
+            padding-right: 15px;
+            background-color: white;
+        }
+
+        .content {
+            margin: 0px;
+            font-weight: 400;
+            color: rgb(0, 0, 0);
+            @include r-14;
+            line-height: 2.4rem;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-height: 125px;
+            padding-right: 15px;
+            background-color: white;
+        }
+    }
+
+    .user-name {
+        margin: 0px;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        display: block;
+        @include r-12;
+        line-height: 1.9rem;
+    }
+}

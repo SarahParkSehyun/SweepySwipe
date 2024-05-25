@@ -4,10 +4,10 @@ import { PUBLIC_IMG_PATH } from "@/config";
 
 const FirstSection = () => {
   return (
-    <div className="section-container">
-      <p>어떻게 버려야 할 지 고민은 그만</p>
-      <h2>빼기가 만드는 새롭게 버리는 공식들을 통해</h2>
-      <h2>폐기물을 간편하게 버려보세요.</h2>
+    <section className="section-container">
+      <p className="section-title">어떻게 버려야 할 지 고민은 그만</p>
+      <h2 className="section-des">빼기가 만드는 새롭게 버리는 공식들을 통해</h2>
+      <h2 className="section-des">폐기물을 간편하게 버려보세요.</h2>
       <StyleButton className="detail-button">자세히보기</StyleButton>
       <div className="flex-style-box">
         <div className="flex-row-box">
@@ -45,7 +45,7 @@ const FirstSection = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

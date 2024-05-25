@@ -1,5 +1,6 @@
-import FirstSection from "./firstSection/firstSection";
+import FirstSection from "./firstSection";
 import HeroSection from "./heroSection";
+import ReviewSection from "./reviewSection";
 import "./style.scss";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="main-container">
       <HeroSection />
       <FirstSection />
+      <ReviewSection />
     </div>
   );
 }

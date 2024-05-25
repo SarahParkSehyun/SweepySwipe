@@ -20,5 +20,7 @@ module.exports = {
     "@typescript-eslint/ban-types": ["off"],
     "@typescript-eslint/no-unused-vars": ["warn"],
     "react-hooks/exhaustive-deps": ["off"],
+    "@typescript-eslint/consistent-type-exports": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
   },
 };
