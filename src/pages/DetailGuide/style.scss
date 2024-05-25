@@ -1,0 +1,156 @@
+.guidebook-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.detail-guide-title {
+		font-size: 22px;
+		font-weight: bold;
+		width: 1090px;
+		padding: 20px 0;
+	}
+
+	.divider {
+		border-bottom: 7px solid #eee;
+		width: 100%;
+	}
+
+	.detail-guide-slider-area {
+		width: 1090px;
+		display: flex;
+		padding: 20px 0 60px 0;
+
+		.slider {
+			width: 600px;
+			background-color: #eee;
+			padding: 30px;
+			border-radius: 20px;
+
+			.slider-card {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 4px;
+
+				img {
+					width: 250px;
+					height: 250px;
+				}
+
+				.title {
+					font-size: 24px;
+					font-weight: bold;
+					height: 30px;
+				}
+
+				.text {
+					font-size: 16px;
+					color: #525252;
+					word-break: keep-all;
+					text-align: center;
+				}
+			}
+
+			.slick-dots {
+				width: 540px;
+
+				li {
+					button {
+						&::before {
+							font-size: 10px;
+						}
+
+						&:focus,
+						&:active,
+						&:hover {
+							&::before {
+								color: #1f40ff;
+								opacity: 1;
+							}
+						}
+					}
+				}
+
+				.slick-active {
+					button {
+						&::before {
+							color: #1f40ff;
+							opacity: 1;
+							content: "⬬";
+							font-size: 20px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.detail-guide-list-area {
+		display: flex;
+		flex-direction: column;
+		width: 1090px;
+		padding: 20px 0;
+
+		.detail-guide-list-title {
+			font-size: 18px;
+			font-weight: bold;
+			padding: 12px 0;
+		}
+
+		.detail-guide-list-card {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 16px;
+			padding: 20px 0;
+			border-bottom: 1px solid #eee;
+
+			img {
+				width: 100px;
+				height: 100px;
+				border-radius: 20px;
+			}
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+
+				.label {
+					margin-bottom: 6px;
+					font-size: 16px;
+					font-weight: bold;
+				}
+
+				.method,
+				.type {
+					display: flex;
+					flex-direction: row;
+					gap: 4px;
+
+					div {
+						border-radius: 10px;
+						background-color: #eee;
+						color: #525252;
+						padding: 4px 6px;
+						font-size: 11px;
+					}
+
+					.blue {
+						background-color: rgb(235, 240, 255);
+						color: rgb(31, 65, 255);
+					}
+
+
+					.green {
+						background-color: #dafde6;
+						color: #06b939;
+					}
+
+				}
+			}
+		}
+	}
+}
