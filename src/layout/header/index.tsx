@@ -17,6 +17,7 @@ const Header = () => {
           <div className="nav-list">
             <Link to={PathContants.Home}>서비스 안내</Link>
             <Link to={PathContants.Home}>빼기 파트너</Link>
+            <Link to={PathContants.Home}>알림설정</Link>
           </div>
         </nav>
         <nav className="right-nav">
