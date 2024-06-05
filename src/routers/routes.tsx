@@ -15,7 +15,7 @@ export const routes: RouteObject[] = [
     children: [
       { path: PathContants.Home, element: <Home /> },
       { path: PathContants.Login, element: <Login /> },
-      { path: PathContants.Login, element: <SignUp /> },
+      { path: PathContants.SignUp, element: <SignUp /> },
       { path: PathContants.GuideBook, element: <GuideBook /> },
       { path: PathContants.DetailGuide, element: <DetailGuide /> },
     ],

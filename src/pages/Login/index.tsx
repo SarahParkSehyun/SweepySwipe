@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
+import PathContants from "@/routers/pathConstants";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -67,7 +68,7 @@ const Login = () => {
         <button onClick={handleLogin}>로그인</button>
 
         <p className="signup-link">
-          아직 회원이 아니신가요? <Link to="/signup">회원가입</Link>
+          아직 회원이 아니신가요? <Link to={PathContants.SignUp}>회원가입</Link>
         </p>
       </form>
     </div>
