@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
 import PathContants from "@/routers/pathConstants";
+import SocialKakao from '../SocialKakao';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -63,9 +64,13 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
          {loginCheck && (
-        <label  style={{color: "red"}}>이메일 혹은 비밀번호가 틀렸습니다.</label>
+        <label style={{color: "red"}}>이메일 혹은 비밀번호가 틀렸습니다.</label>
         )}
-        <button onClick={handleLogin}>로그인</button>
+        <button type="submit">로그인</button>
+
+        <div className="social-login">
+          <SocialKakao />
+        </div>
 
         <p className="signup-link">
           아직 회원이 아니신가요? <Link to={PathContants.SignUp}>회원가입</Link>
