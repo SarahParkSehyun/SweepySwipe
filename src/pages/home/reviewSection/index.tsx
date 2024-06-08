@@ -18,8 +18,7 @@ const ReviewSection = () => {
     dots: false,
     slidesToScroll: 1,
     variableWidth: true,
-    // autoplay: true,
-    // slidesToScroll: 1,
+    autoplay: true,
     rows: 1,
     slidesPerRow: 1,
   };

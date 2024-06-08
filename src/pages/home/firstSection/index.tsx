@@ -6,7 +6,9 @@ const FirstSection = () => {
   return (
     <section className="section-container">
       <p className="section-title">어떻게 버려야 할 지 고민은 그만</p>
-      <h2 className="section-des">빼기가 만드는 새롭게 버리는 공식들을 통해</h2>
+      <h2 className="section-des">
+        쓱쓱싹싹이 만드는 새롭게 버리는 공식들을 통해
+      </h2>
       <h2 className="section-des">폐기물을 간편하게 버려보세요.</h2>
       <StyleButton className="detail-button">자세히보기</StyleButton>
       <div className="flex-style-box">
@@ -21,7 +23,7 @@ const FirstSection = () => {
             title="내려드림"
             icon={`${PUBLIC_IMG_PATH}/clean_img_2.webp`}
             des1="혼자 버리기 어려운 대형폐기물을"
-            des2="검증된 빼기 파트너를 통해 대신 버리실 수 있어요."
+            des2="검증된 쓱쓱싹싹 파트너를 통해 대신 버리실 수 있어요."
           />
         </div>
         <div className="flex-row-box">
@@ -29,7 +31,7 @@ const FirstSection = () => {
             title="중고매입"
             icon={`${PUBLIC_IMG_PATH}/clean_img_3.webp`}
             des1="버리는 물품을 중고 물품으로"
-            des2="빼기 파트너에게 판매할 수도 있어요."
+            des2="쓱쓱싹싹 파트너에게 판매할 수도 있어요."
           />
           <GrayBox
             title="의류, 도서 기부"
@@ -40,7 +42,7 @@ const FirstSection = () => {
           <GrayBox
             title="공사장 생활폐기물 배출"
             icon={`${PUBLIC_IMG_PATH}/clean_img_5.webp`}
-            des1="빼기 앱으로 공사장 생활폐기물 배출을"
+            des1="쓱쓱싹싹 앱으로 공사장 생활폐기물 배출을"
             des2="One-Stop으로 간편하게 신고해보세요."
           />
         </div>

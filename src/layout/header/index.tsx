@@ -15,9 +15,7 @@ const Header = () => {
             </div>
           </Link>
           <div className="nav-list">
-            <Link to={PathContants.Home}>서비스 안내</Link>
-            <Link to={PathContants.Home}>빼기 파트너</Link>
-            <Link to={PathContants.Home}>알림설정</Link>
+            <Link to={PathContants.Setting}>알림설정</Link>
           </div>
         </nav>
         <nav className="right-nav">
@@ -25,7 +23,7 @@ const Header = () => {
             <Link to={PathContants.Login}>로그인</Link>
             <Link to={PathContants.SignUp}>회원가입</Link>
             <StyleButton className="style-button">
-              대형 폐기물 수거신청
+              <Link to={PathContants.GuideBook}>쓱쓱싹싹 가이드북</Link>
             </StyleButton>
           </div>
         </nav>
