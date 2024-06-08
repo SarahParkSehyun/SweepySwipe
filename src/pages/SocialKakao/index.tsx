@@ -18,4 +18,3 @@ const SocialKakao = () => {
 };
 
 export default SocialKakao;
-
