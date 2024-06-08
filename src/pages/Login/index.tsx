@@ -48,10 +48,6 @@ const Login = () => {
         <div className="social-login">
           <SocialKakao />
         </div>
-
-        <p className="signup-link">
-          아직 회원이 아니신가요? <Link to={PathContants.SignUp}>회원가입</Link>
-        </p>
       </form>
     </div>
   );

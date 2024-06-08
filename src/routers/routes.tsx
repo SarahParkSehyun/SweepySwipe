@@ -6,8 +6,8 @@ import Error404 from "@/pages/error/404";
 import Login from "@/pages/Login";
 import GuideBook from "@/pages/GuideBook";
 import DetailGuide from "@/pages/DetailGuide";
-import SignUp from "@/pages/SignUp";
 import Settings from "@/pages/Settings";
+
 export const routes: RouteObject[] = [
   {
     element: <DefaultLayout />,
@@ -15,7 +15,6 @@ export const routes: RouteObject[] = [
     children: [
       { path: PathContants.Home, element: <Home /> },
       { path: PathContants.Login, element: <Login /> },
-      { path: PathContants.SignUp, element: <SignUp /> },
       { path: PathContants.Setting, element: <Settings /> },
       { path: PathContants.GuideBook, element: <GuideBook /> },
       { path: PathContants.DetailGuide, element: <DetailGuide /> },
