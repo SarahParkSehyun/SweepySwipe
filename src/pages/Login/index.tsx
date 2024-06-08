@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./style.scss";
 import PathContants from "@/routers/pathConstants";
 import SocialKakao from '../SocialKakao';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [loginCheck, setLoginCheck] = useState(false); // 로그인 상태 체크
 
   const navigate = useNavigate();
@@ -22,11 +20,7 @@ const Login = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
+        }
       }
     );
     const result = await response.json();
@@ -48,26 +42,9 @@ const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleLogin}>
-        <label htmlFor="username">이메일</label>
-        <input
-          type="text"
-          id="username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <label htmlFor="password">비밀번호</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
          {loginCheck && (
-        <label style={{color: "red"}}>이메일 혹은 비밀번호가 틀렸습니다.</label>
+        <label style={{color: "red"}}>로그인에 실패했습니다.</label>
         )}
-        <button type="submit">로그인</button>
-
         <div className="social-login">
           <SocialKakao />
         </div>
