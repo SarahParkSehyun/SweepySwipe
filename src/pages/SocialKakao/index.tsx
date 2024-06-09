@@ -1,11 +1,32 @@
-const SocialKakao = () => {
-  const Rest_api_key = 'bbf944c9e84c07e8f2cf4fe272cbf5de'; // REST API KEY
-  const redirect_uri = 'http://localhost:3000/auth'; // Redirect URI
-  // oauth 요청 URL
-  const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`;
+import React from "react";
 
-  const handleLogin = () => {
-    window.location.href = kakaoURL;
+const SocialKakao = () => {
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/member/login", {
+        method: "GET",
+        headers: {
+          'Accept': 'text/html',  // HTML 응답을 받기 위해 설정
+        },
+      });
+
+      if (response.ok) {
+        const htmlText = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+        const loginLink = doc.querySelector('a').href;
+        
+        if (loginLink) {
+          window.location.href = loginLink;
+        } else {
+          console.error("Login URL not found");
+        }
+      } else {
+        console.error("Failed to get login page");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
