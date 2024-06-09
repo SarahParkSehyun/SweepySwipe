@@ -7,6 +7,7 @@ import Login from "@/pages/Login";
 import GuideBook from "@/pages/GuideBook";
 import DetailGuide from "@/pages/DetailGuide";
 import Settings from "@/pages/Settings";
+import AuthCallback from "@/pages/AuthCallback";
 
 export const routes: RouteObject[] = [
   {
@@ -15,6 +16,7 @@ export const routes: RouteObject[] = [
     children: [
       { path: PathContants.Home, element: <Home /> },
       { path: PathContants.Login, element: <Login /> },
+      { path: PathContants.AuthCallback, element: <AuthCallback /> },
       { path: PathContants.Setting, element: <Settings /> },
       { path: PathContants.GuideBook, element: <GuideBook /> },
       { path: PathContants.DetailGuide, element: <DetailGuide /> },
