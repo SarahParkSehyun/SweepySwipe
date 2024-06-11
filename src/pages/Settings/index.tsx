@@ -79,7 +79,7 @@ const Settings = () => {
       });
   };
   const getUseNotifySettingData = async () => {
-    const response = await fetch(apiUrl, {
+    await fetch(apiUrl, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token!}`,
