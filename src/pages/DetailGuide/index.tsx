@@ -43,7 +43,7 @@ const DetailGuide = () => {
       const data = await response.json();
 
       if (!response.ok) return;
-      setTrashInfo(data.result);
+      setTrashInfo(data || []); // 데이터가 없는 경우 빈 배열로 초기화
     } catch (error) {
       console.error("getTrashInfo Error:", error);
     }
@@ -53,7 +53,7 @@ const DetailGuide = () => {
     const id = location.state?.trash?.id;
     if (!id) return navigate(-1);
     getTrashInfo(id);
-  }, [location.state]);
+  }, [location.state, navigate]);
 
   const ListCard = ({ data }: { data: ITrashInfo }) => {
     return (
@@ -67,14 +67,11 @@ const DetailGuide = () => {
               <div>재활용 불가능</div>
             )}
           </div>
-          {/* <div className="type">
-            <div className="blue">일반</div>
-            <div className="blue">대형폐기물</div>
-          </div> */}
         </div>
       </div>
     );
   };
+
   const SliderCard = ({ data }: { data: { text: string; title?: string } }) => {
     return (
       <div className="slider-card">
@@ -84,37 +81,36 @@ const DetailGuide = () => {
     );
   };
 
-  const { trash } = location.state;
-  if (!trash) return;
+  const { trash } = location.state || {};
+  if (!trash) return null;
+
   return (
     <div className="guidebook-container">
       <div className="detail-guide-title">{`${trash.name} 분리배출 가이드북`}</div>
       <div className="detail-guide-slider-area">
-        {trash ? (
-          <Slider {...settings} className="slider">
-            {trash.disposalMethod ? (
-              <SliderCard
-                data={{
-                  text: trash.disposalMethod,
-                }}
-              />
-            ) : null}
-            {trash.caution ? (
-              <SliderCard
-                data={{
-                  title: "유의사항",
-                  text: trash.caution,
-                }}
-              />
-            ) : null}
-          </Slider>
-        ) : null}
+        <Slider {...settings} className="slider">
+          {trash.disposalMethod && (
+            <SliderCard
+              data={{
+                text: trash.disposalMethod,
+              }}
+            />
+          )}
+          {trash.caution && (
+            <SliderCard
+              data={{
+                title: "유의사항",
+                text: trash.caution,
+              }}
+            />
+          )}
+        </Slider>
       </div>
       <div className="divider" />
       <div className="detail-guide-list-area">
         <div className="detail-guide-list-title">{`${trash.name} 전체`}</div>
         {trashInfo.length ? (
-          trashInfo.map((v) => <ListCard data={v} />)
+          trashInfo.map((v) => <ListCard key={v.id} data={v} />)
         ) : (
           <div className="empty-text">데이터가 없습니다.</div>
         )}
