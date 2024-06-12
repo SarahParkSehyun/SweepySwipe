@@ -6,18 +6,20 @@ import PathContants from "@/routers/pathConstants";
 interface ITrashList {
   id: number;
   name: string;
-  disposalInstructions: string;
+  caution: string;
+  disposalMethod: string;
 }
+
 const GuideBook = () => {
   const [trashList, setTrashList] = useState<ITrashList[]>([]);
   const navigate = useNavigate();
 
   const getTrashList = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/trash-items", {
+      const response = await fetch("http://localhost:8080/api/trash/types", {
         method: "GET",
         headers: {
-          Accept: "text/html",
+          "Content-Type": "application/json",
         },
       });
 
@@ -30,19 +32,21 @@ const GuideBook = () => {
     }
   };
 
-  const handleClickCard = (id: number) => {
-    if (!id) return;
-    navigate(`${PathContants.DetailGuide}?id=${id}`);
+  const handleClickCard = (trash: ITrashList) => {
+    if (!trash.id) return;
+    navigate(`${PathContants.DetailGuide}`, {
+      state: { trash },
+    });
   };
 
   useEffect(() => {
     getTrashList();
   }, []);
 
-  const Card = ({ name, id }: { name: string; id: number }) => {
+  const Card = ({ trash }: { trash: ITrashList }) => {
     return (
-      <div className="guidebook-card" onClick={() => handleClickCard(id)}>
-        <div className="label">{name}</div>
+      <div className="guidebook-card" onClick={() => handleClickCard(trash)}>
+        <div className="label">{trash.name}</div>
       </div>
     );
   };
@@ -55,7 +59,7 @@ const GuideBook = () => {
       {trashList.length ? (
         <div className="guidebook-card-area">
           {trashList.map((trash) => (
-            <Card name={trash.name} id={trash.id} />
+            <Card trash={trash} />
           ))}
         </div>
       ) : (
