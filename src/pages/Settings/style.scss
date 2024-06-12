@@ -37,18 +37,42 @@
                 gap: 4px;
 
                 label {
-                    width: 20%;
+                    width: 30%;
                     font-size: 1.2rem;
                 }
 
                 input {
-                    width: 80%;
-                    height: 20px;
-                    padding: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
+                    &.input-box {
+                        width: 70%;
+                        height: 20px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+
                 }
+            }
+
+            .submit-button {
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: 30px;
+                padding: 4px 18px;
+                border-radius: 50px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: 2.08rem;
+                line-height: 4rem;
+                cursor: pointer;
+                outline: none;
+                text-align: center;
+                border: 1.5px solid rgb(235, 240, 255);
+                background-color: rgb(235, 240, 255);
+                color: rgb(31, 65, 255);
             }
         }
 

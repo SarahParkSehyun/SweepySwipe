@@ -7,7 +7,8 @@
 		font-size: 22px;
 		font-weight: bold;
 		width: 100%;
-		padding: 20px 0;
+		max-width: 1090px;
+		padding: 20px;
 	}
 
 	.divider {
@@ -16,15 +17,21 @@
 	}
 
 	.detail-guide-slider-area {
-		width: 1090px;
+		max-width: 1090px;
+		width: 100%;
 		display: flex;
-		padding: 20px 0 60px 0;
+		padding: 20px 20px 60px 20px;
 
 		.slider {
 			width: 600px;
 			background-color: #eee;
 			padding: 30px;
 			border-radius: 20px;
+
+			.slick-track {
+				display: flex;
+				align-items: center;
+			}
 
 			.slider-card {
 				display: flex;
@@ -77,9 +84,6 @@
 						&::before {
 							color: #1f40ff;
 							opacity: 1;
-							content: "⬬";
-							font-size: 20px;
-							margin-top: -3px;
 						}
 					}
 				}
@@ -90,13 +94,19 @@
 	.detail-guide-list-area {
 		display: flex;
 		flex-direction: column;
-		width: 1090px;
-		padding: 20px 0;
+		max-width: 1090px;
+		width: 100%;
+		padding: 20px;
 
 		.detail-guide-list-title {
 			font-size: 18px;
 			font-weight: bold;
-			padding: 12px 0;
+			padding: 12px;
+		}
+
+		.empty-text {
+			font-size: 16px;
+			padding: 12px;
 		}
 
 		.detail-guide-list-card {
@@ -104,7 +114,7 @@
 			flex-direction: row;
 			align-items: center;
 			gap: 16px;
-			padding: 20px 0;
+			padding: 20px;
 			border-bottom: 1px solid #eee;
 
 			img {

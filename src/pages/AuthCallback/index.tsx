@@ -11,20 +11,17 @@ const AuthCallback = () => {
 
       if (code) {
         try {
-          const response = await fetch("http://localhost:8080/member/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ code }),
-          });
+          const response = await fetch(
+            `http://localhost:8080/member/login`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
 
           if (response.ok) {
-            const result = await response.json();
-            sessionStorage.setItem("token", result.token);
-            sessionStorage.setItem("email", result.email);
-            sessionStorage.setItem("role", result.role);
-            sessionStorage.setItem("storeid", result.storeId);
             navigate("/"); // 홈으로 이동
           } else {
             console.error("Callback failed");

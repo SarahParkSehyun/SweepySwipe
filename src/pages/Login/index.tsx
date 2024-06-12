@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.scss";
 import SocialKakao from '../SocialKakao';
-import PathContants from "@/routers/pathConstants";
 
 const Login = () => {
   return (
