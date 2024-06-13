@@ -49,11 +49,6 @@ const Settings = () => {
       value: EDayOfWeek.SUNDAY,
     },
   ];
-  const [userInfo, setUserInfo] = useState<{
-    id: number;
-    name: string;
-    email: string;
-  } | null>(null);
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await fetch(apiUrl, {
@@ -63,9 +58,6 @@ const Settings = () => {
         Authorization: `Bearer ${token!}`,
       },
       body: JSON.stringify({
-        id: userInfo!.id,
-        name: userInfo!.name,
-        email: userInfo!.email,
         enabled,
         dayOfWeek,
         time,
@@ -89,11 +81,6 @@ const Settings = () => {
       setTime(result.time);
       setEnabled(result.enabled);
       setDayOfWeek(result.dayOfWeek);
-      setUserInfo({
-        id: result.id,
-        email: result.email,
-        name: result.name,
-      });
     });
   };
   const handleChangeInput =
