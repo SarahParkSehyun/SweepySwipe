@@ -12,7 +12,7 @@ const AuthCallback = () => {
       if (code) {
         try {
           const response = await fetch(
-            `http://localhost:8080/callback?code=${code}`,
+            `http://localhost:8080/member/login`,
             {
               method: "GET",
               headers: {

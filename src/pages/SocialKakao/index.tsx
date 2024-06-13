@@ -31,9 +31,7 @@ const SocialKakao = () => {
 
   return (
     <>
-      <button onClick={handleLogin}>
-        카카오 로그인
-      </button>
+      <button onClick={handleLogin}>카카오 로그인</button>
     </>
   );
 };

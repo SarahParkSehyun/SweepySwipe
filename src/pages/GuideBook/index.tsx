@@ -26,7 +26,7 @@ const GuideBook = () => {
       const data = await response.json();
 
       if (!response.ok) return;
-      setTrashList(data.result);
+      setTrashList(data); // data.result 대신 data 사용
     } catch (error) {
       console.error("getTrashList Error:", error);
     }
@@ -56,10 +56,10 @@ const GuideBook = () => {
       <div className="guidebook-title">
         알아보고 싶은 쓰레기를 선택해 주세요
       </div>
-      {trashList.length ? (
+      {trashList && trashList.length ? (
         <div className="guidebook-card-area">
           {trashList.map((trash) => (
-            <Card trash={trash} />
+            <Card key={trash.id} trash={trash} />
           ))}
         </div>
       ) : (
