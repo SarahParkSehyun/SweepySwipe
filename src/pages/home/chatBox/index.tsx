@@ -14,39 +14,37 @@ const ChatBox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
   const handleSendQuestion = async () => {
     if (isLoading || !question) return;
     setIsLoading(true);
-    pushChatData("question", question);
+    const currentQuestion = question;
+    pushChatData("question", currentQuestion);
+    setQuestion(""); // Clear the input field immediately after storing the current question
+
     try {
       const response = await axios.post(
-        "http://localhost:9090/api/v1/chat/question",
+        "http://localhost:8080/api/v1/chat/question",
         {
-          question: question,
+          question: currentQuestion,
         }
       );
       pushChatData("answer", response.data.choices[0].message.content);
-      setQuestion("");
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      setQuestion("");
     }
   };
 
   const pushChatData = (type: ChatType, message: string) => {
-    const copiedList = [...chatList];
-    copiedList.push({
-      type,
-      message,
-    });
-    setChatList(copiedList);
+    setChatList((prevChatList) => [...prevChatList, { type, message }]);
   };
 
   const handleChangeQuestion = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuestion(value);
   };
+
   const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (!isLoading && question && e.key === "Enter") {
       handleSendQuestion();
@@ -59,9 +57,11 @@ const ChatBox = () => {
         <header className="title-area">분리수거 챗봇</header>
         <div className="chat-area">
           <div className="chat-list">
-            {chatList.map((item) => {
+            {chatList.map((item, index) => {
               return (
-                <div className={`chat-item ${item.type}`}>{item.message}</div>
+                <div key={index} className={`chat-item ${item.type}`}>
+                  {item.message}
+                </div>
               );
             })}
           </div>
@@ -77,7 +77,7 @@ const ChatBox = () => {
             onChange={handleChangeQuestion}
           />
           <button onClick={handleSendQuestion}>
-            <img src="/images/enter.svg" />
+            <img src="/images/enter.svg" alt="send" />
           </button>
         </div>
       </div>
@@ -87,7 +87,7 @@ const ChatBox = () => {
         className="floating-btn"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <img src={`/images/${isOpen ? "close" : "comment"}.svg`} />
+        <img src={`/images/${isOpen ? "close" : "comment"}.svg`} alt="toggle" />
       </Fab>
     </div>
   );
