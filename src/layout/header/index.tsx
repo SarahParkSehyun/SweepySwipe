@@ -30,7 +30,7 @@ const Header = () => {
         <nav className="left-nav">
           <Link className="logo" to={PathContants.Home}>
             <div>
-              <img src={`${PUBLIC_IMG_PATH}/temp_logo.svg`} />
+              <img src={`${PUBLIC_IMG_PATH}/쓱쓱싹싹_로고.png`} style={{ height: "50px", width: "auto" }} />
             </div>
           </Link>
           <div className="nav-list">
